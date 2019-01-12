@@ -1,0 +1,38 @@
+{% extends 'posts/layout.html' %}
+
+{% block ROW1 %}
+
+	{{post.title}}
+
+	
+
+{% endblock %}
+
+{% block ROW2 %}
+
+	{{post.body}}
+
+{% endblock %}
+
+{% block ROW3 %}
+	<ul>
+	{% for comment in comments %}
+	<li><b> {{comment.autor}} </b> </li> </br>
+		{{comment.body}}
+	{% endfor %}	
+	</ul>
+	
+	
+	<form action="" method="POST">
+		{% csrf_token %}
+		{{ form }}
+	<input type="submit" class="btn-success" value="Add">
+	</form>
+
+{% endblock %}
+
+{% block Buttons %}
+
+	
+
+{% endblock %}
